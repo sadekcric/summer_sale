@@ -203,17 +203,25 @@
 
                 <div id="title-container"></div>
                 <hr class="my-4" />
-                <p class="text-xl font-bold py-2">Total Price: <span class="text-[#F11A7B]">$</span> <span id="totalPrice" class=" text-[#F11A7B]"></span></p>
+                <p class="text-xl font-bold py-2">
+                  Total Price: <span class="text-[#F11A7B]">$</span> <span id="totalPrice" class="text-[#F11A7B]"></span>
+                </p>
 
-                <p class="text-xl font-bold py-2">Discount: <span class="text-green-400">$</span><span id="discountPrice" class="text-green-400"></span></p>
-                <p class="text-xl font-bold pb-2 ">Total: <span class="text-[#F11A7B]">$</span> <span id="total" class="text-[#F11A7B]"></span></p>
+                <p class="text-xl font-bold py-2">
+                  Discount: <span class="text-green-400">$</span><span id="discountPrice" class="text-green-400"></span>
+                </p>
+                <p class="text-xl font-bold pb-2">
+                  Total: <span class="text-[#F11A7B]">$</span> <span id="total" class="text-[#F11A7B]"></span>
+                </p>
                 <hr class="my-4" />
-                <button class="btn btn-wide bg-[#F11A7B] text-white">Make Purchase</button>
+                <button onclick="orderCompleted()" class="btn btn-wide bg-[#F11A7B] text-white">Make Purchase</button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- =====order complete========= -->
     </main>
 
     <script src="./script.js"></script>

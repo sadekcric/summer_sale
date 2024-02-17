@@ -1,14 +1,22 @@
 let totalPrice = 0;
+let count = 1;
+
 const total = document.getElementById("total");
 
+const blankArr = [];
 function calculateCard(card, voucherName) {
   const name = card.querySelector("h3").innerText;
   let totalName = document.getElementById(voucherName);
   const createPara = document.createElement("p");
-  createPara.innerText = name;
+  createPara.innerText = count + ". " + name;
   createPara.classList.add("text-lg");
+  if (blankArr.includes(name)) {
+    const message = `no Duplicate Allowed`;
+    throw message;
+  }
+  blankArr.push(name);
   totalName.appendChild(createPara);
-  return totalName;
+  count++;
 }
 
 function calculatePrice(card) {
@@ -35,18 +43,21 @@ function discount() {
       getDiscount.innerText = discountPrice.toFixed(2);
       errorMessage.innerText = "";
       const discountTotal = totalPrice - discountPrice;
-      total.innerText = discountTotal;
+      total.innerText = discountTotal.toFixed(2);
       errorMessage.innerText = "";
-    } else if(!(couponInput==='')) {
+      document.getElementById("apply-btn").setAttribute("disabled", true);
+    } else if (!(couponInput === "")) {
       errorMessage.innerText = "Wrong coupon";
     }
   } else {
     errorMessage.innerText = `Your purchase amount is below 200. purchase any more`;
   }
   document.getElementById("input-field").value = "";
-  
 }
 
 function totalAmount() {
-  total.innerText = totalPrice;
+  total.innerText = totalPrice.toFixed(2);
 }
+
+
+

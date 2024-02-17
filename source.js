@@ -1,12 +1,14 @@
 const cards=document.querySelectorAll('.card');
 [...cards].forEach(card=>{
-  card.addEventListener('click', function(){
+  card.addEventListener('click', function(e){
     calculateCard(this, 'title-container');
     calculatePrice(this);
-    
-    document.getElementById('apply-btn').addEventListener('click', function(){
-      discount();
-    })
-    totalAmount()
+    totalAmount();
   })
+
+  document.getElementById('apply-btn').addEventListener('click', function(e){
+    discount();
+    
+  })
+  
 })
